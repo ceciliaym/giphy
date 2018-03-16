@@ -2,7 +2,7 @@
 $(document).ready(function(){
 
 //function to make the button click work
-$("button").on("click", function() {
+$("#buttonPlace").on("click",".click", function() {
 
   //making a var to grab the data from the api
   var food = $(this).attr("data-food");
@@ -51,6 +51,17 @@ $("button").on("click", function() {
     });
 });
 
+$('#foodItems').on('click', function (){
+  console.log('clean');
+  console.log($('#place-input').val().trim());
+  var userInput = $('#place-input').val().trim()
+  console.log(userInput);
+ var newButton = $('<button>');
+ newButton.addClass('click')
+ newButton.attr('data-food', userInput)
+ newButton.append(userInput)
+$('#buttonPlace').append(newButton)
+})
 
 })
 
